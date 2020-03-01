@@ -7,6 +7,8 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
 import './ScheduleItem.css'
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,6 +24,7 @@ const useStyles = makeStyles(theme => ({
 export default function ScheduleItem(props) {
   const classes = useStyles();
     return (
+      <Row>
       <div className={classes.root} id="scheduleItem">
       <Paper className={classes.paper}>
       <Grid container spacing={1}>
@@ -32,10 +35,11 @@ export default function ScheduleItem(props) {
           <Paper className={classes.paper}>1200Р</Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={classes.paper}>Имя Клиента</Paper>
+    <Paper className={classes.paper}>{props.name}}</Paper>
         </Grid>
       </Grid>
       </Paper>
     </div>
-        );
+    </Row>
+    );
 }

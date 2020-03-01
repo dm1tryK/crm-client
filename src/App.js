@@ -1,7 +1,10 @@
 import React from 'react';
 import Sidebar from './sidebar/Sidebar'
 import ScheduleItem from './schedule/ScheduleItem' 
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 
 import {
   BrowserRouter as Router,
@@ -18,7 +21,7 @@ class App extends React.Component {
       <div class="page-wrapper"> 
       <Switch>
         <Route path="/schedule">
-          <Sidebar name="prop name"/>
+          
           <ScheduleList />
         </Route>
         <Route path="">

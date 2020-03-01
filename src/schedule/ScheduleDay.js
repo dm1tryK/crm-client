@@ -9,6 +9,10 @@ import Paper from '@material-ui/core/Paper';
 import ScheduleItem from './ScheduleItem'
 import ScheduleItemEmpty from './ScheduleItemEmpty';
 import './ScheduleDay.css'
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import './ScheduleDay.css'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -24,14 +28,10 @@ const useStyles = makeStyles(theme => ({
   }));
 
 export default function ScheduleDay(props) {
-    return (
-        <Grid container xs={2} sm={2}
-        direction="column"
-        justify="flex-start"
-        alignItems="center" id="scheduleDay">
-           <ScheduleItem />   
-           <ScheduleItemEmpty />
-           <ScheduleItem /> 
-        
-        </Grid>);
+  const classes = useStyles();
+    let items = []
+    for (var i=0;i < props.count;i++)
+      items.push(<ScheduleItem name={props.name} key={i}/>)
+      
+    return (<Col id="scheduleDay">{items}</Col>);
 }

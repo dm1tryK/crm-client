@@ -1,5 +1,10 @@
 #scheduleList {
-    min-height: 100vh;
-    background-color: antiquewhite;
-    padding-left: 60px;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+#container {
+    min-width: 100vh;
+    max-width: 100%;
+    
 }
